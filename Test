@@ -1,0 +1,11 @@
+graph TD
+    S3[S3 Bucket<br/>(CSV Files)]
+    EB[EventBridge<br/>(Daily Rule)]
+    Lambda[AWS Lambda<br/>(Processes & Sends Alert)]
+    SES[SES<br/>(Send Emails)]
+    Recipients[Email Recipients<br/>(PICs)]
+
+    S3 --> EB
+    EB --> Lambda
+    Lambda --> SES
+    SES --> Recipients
